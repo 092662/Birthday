@@ -1,0 +1,363 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 25%, #f8b195 50%, #ffd89b 75%, #ff9a56 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Birthday background particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, #ffd700, rgba(255, 215, 0, 0)),
+    radial-gradient(2px 2px at 60% 70%, #ff1493, rgba(255, 20, 147, 0)),
+    radial-gradient(1px 1px at 50% 50%, #00bfff, rgba(0, 191, 255, 0)),
+    radial-gradient(1px 1px at 80% 10%, #ffa500, rgba(255, 165, 0, 0)),
+    radial-gradient(2px 2px at 90% 60%, #32cd32, rgba(50, 205, 50, 0)),
+    radial-gradient(1px 1px at 30% 80%, #ff69b4, rgba(255, 105, 180, 0)),
+    radial-gradient(2px 2px at 40% 20%, #ffb6c1, rgba(255, 182, 193, 0)),
+    radial-gradient(1px 1px at 70% 40%, #ff4500, rgba(255, 69, 0, 0));
+  background-size: 200% 200%, 150% 150%, 180% 180%, 160% 160%, 190% 190%, 170% 170%, 155% 155%, 175% 175%;
+  background-position: 
+    0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 10% 90%, 50% 10%, 70% 50%;
+  animation: 
+    sparkle 3s ease-in-out infinite,
+    drift 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+.song {
+  visibility: hidden;
+}
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 10;
+}
+
+.container > div {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20vh;
+}
+
+.one {
+  font-size: 4.5rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 182, 193, 0.8);
+  color: #fff;
+  font-weight: 600;
+}
+
+.two {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.three {
+  font-size: 3rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.9);
+  color: #fff;
+  font-weight: 600;
+}
+
+.four .text-box {
+  border: 3px solid #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+}
+
+.text-box span {
+  visibility: hidden;
+}
+
+.text-box .fake-btn {
+  background-color: rgb(21, 161, 237);
+  border-radius: 3px;
+  bottom: -50px;
+  color: #fff;
+  padding: .5rem 1rem;
+  position: absolute;
+  right: 5px;
+}
+
+.five p {
+  font-size: 2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-weight: 500;
+}
+
+.idea-3 strong {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 3px 5px;
+}
+
+.five .idea-5 {
+  font-size: 4rem;
+}
+
+.idea-5 span, .idea-6 span, .wish-hbd span {
+  display: inline-block;
+}
+
+.idea-6 span{
+  font-size: 15rem;
+}
+
+
+.six {
+  position: relative;
+  top: 10vh;
+  z-index: 1;
+}
+
+.six img {
+  display: inline-block;
+  height: 350px;
+  max-width: 100%;
+  /* height: auto; */
+}
+
+.six .hat {
+  left: 41.5%;
+  position: absolute;
+  /* transform: scale(0.1); */
+  top: -35%;
+  width: 80px;
+}
+
+.baloons img {
+  display: inline-block;
+  position: absolute;
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+.seven, .eight {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.eight svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 25px;
+  z-index: -1;
+}
+
+.eight svg:nth-child(1) {
+  fill: #bd6ecf;
+  left: 5vw;
+  top: 7vh;
+}
+
+.eight svg:nth-child(2) {
+  fill: #7dd175;
+  left: 35vw;
+  top: 23vh;
+}
+
+.eight svg:nth-child(3) {
+  fill: #349d8b;
+  left: 23vw;
+  top: 33vh;
+}
+
+.eight svg:nth-child(4) {
+  fill: #347a9d;
+  left: 57vw;
+  top: 43vh;
+}
+
+.eight svg:nth-child(5) {
+  fill: #c66053;
+  left: 7vw;
+  top: 68vh;
+}
+
+.eight svg:nth-child(6) {
+  fill: #bfaa40;
+  left: 77vw;
+  top: 42vh;
+}
+
+.eight svg:nth-child(7) {
+  fill: #e3bae8;
+  left: 83vw;
+  top: 68vh;
+}
+
+.eight svg:nth-child(8) {
+  fill: #8762cb;
+  left: 37vw;
+  top: 86vh;
+}
+
+.eight svg:nth-child(9) {
+  fill: #9a90da;
+  left: 87vw;
+  top: 94vh;
+}
+
+.wish-hbd {
+  font-size: 3em;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 215, 0, 0.9);
+  color: #ff1493;
+  font-weight: 700;
+}
+
+.wish h5 {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin: 10px 0 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.nine p {
+  font-size: 2rem;
+  font-weight: lighter;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+#replay {
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Media Queries */
+@media screen and (max-height: 1000px) {
+  .six .hat {
+    left: 40%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .six .hat {
+    left: 37%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-height: 850px) and (max-width: 450px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+
+  .four .text-box {
+    width: 90%;
+  }
+
+  .text-box .fake-btn {
+    bottom: -38px;
+    right: 5px;
+  }
+
+  .idea-5 span {
+    display: block;
+  }
+
+  .idea-6 span {
+    font-size: 10rem;
+  }
+
+  .six .hat {
+    /* top: -20px; */
+    width: 50px;
+  }
+
+  .wish-hbd {
+    font-size: 2.2em;
+  }
+
+  .wish h5 {
+    font-size: 1.4rem;
+  }
+
+  .nine p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+}
